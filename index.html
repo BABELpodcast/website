@@ -26,7 +26,7 @@
 	<style>
 		
 		body {
-			background: #cee1fe url(frame-186.jpg) 50% 50% no-repeat;
+			background: #cee1fe;
 			background-size: cover;
 			margin: 0;
 			position: relative;
@@ -37,15 +37,57 @@
 			font-weight: bold;
 		}
 		
-		#wrapper {
-			background: url(towers-full-02.gif) 50% 50% no-repeat;
+		#bgvideo { 
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: -100;
+			transform: translateX(-50%) translateY(-50%);
+			background: url('frame-186.jpg') no-repeat;
 			background-size: cover;
+			transition: 1s opacity;
+		}
+		
+		#wrapper {
 			box-sizing: border-box;
 			height: 100vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
 		}
+		
+		header {
+			padding-top: 2em;
+			min-height: 40vh;
+		}
+		
+		header #logo {
+			display: block;
+			margin: 20vh auto 2em;
+			width: 68%;
+			max-width: 600px;
+		}
+<!--
+		
+		@media (max-width: 875px), screen and (max-height: 630px) {
+			header #logo {
+				margin: 20vh auto 2em;
+			}
+		}
+		
+		@media (max-width: 425px), screen and (max-height: 450px) {
+			header #logo {
+				margin: 20vh auto 2em;
+			}
+		}
+
+		@media (max-width: 310px), screen and (max-height: 320px) {
+			header #logo {
+				margin: 20vh auto 2em;
+			}
+		}
+-->
 
 		#credit {
 			background: rgba(239,239,239,.54);
@@ -57,51 +99,6 @@
 			max-width: 80vw;
 		}
 		
-		#logo {
-			margin: 0 auto;
-			text-align: center;
-		}
-		#logo h1 {
-			font-size: 225px;
-			color: rgba(51, 230, 153, 0.74);
-			margin: -.22em 0 0 -.07em;
-		}
-		#logo p {
-			background: rgba(51, 230, 153, 0.74);
-			color: rgba(239, 239, 239, 0.74);
-			padding: .4em .6em .3em .4em;
-			font-size: 112px;
-			margin: 0 auto;
-			width: 6em;
-			letter-spacing: 0.17em;
-		}
-		
-		@media (max-width: 875px), screen and (max-height: 630px) {
-		#logo h1 {
-			font-size: 112px;
-		}
-		#logo p {
-			font-size: 56px;
-		  }
-
-		@media (max-width: 425px), screen and (max-height: 450px) {
-		#logo h1 {
-			font-size: 84px;
-		}
-		#logo p {
-			font-size: 42px;
-		  }
-		}
-
-		@media (max-width: 310px), screen and (max-height: 320px) {
-		#logo h1 {
-			font-size: 56px;
-		}
-		#logo p {
-			font-size: 28px;
-		  }
-		}
-		
 	</style>
 
 </head>
@@ -109,11 +106,24 @@
 <div id="wrapper">
 	<!-- page content -->
 	
-	<div id="logo">
-		<h1>BABEL</h1><p>PODCAST</p>
-	</div><!-- #logo -->
+	<header>
+		<img id="logo" src="logo.svg" alt="BABEL podcast">
+		
+	</header>
+	
+	
+	
+	
+	
 	
 	<p id="credit">bg animation credit: <a href="https://www.youtube.com/watch?v=3zoTKXXNQIU" title="&ldquo;Non-Newtonian Fluid on a Speaker Cone&rdquo; by bendhoward, 10,156,714 views">bendhoward</a></p>
 </div><!--#wrapper-->
+
+<!-- bg video -->
+<video poster="frame-186.jpg" id="bgvideo" playsinline autoplay muted loop>
+	<source src="Non-Newtonian Fluid on a Speaker Cone.mp4" type="video/mp4">
+	<source src="towers.mp4" type="video/mp4">
+	<source src="towers.webm" type="video/webm">
+</video><!-- #bgvideo -->
 </body>
 </html>
